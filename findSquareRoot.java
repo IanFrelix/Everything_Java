@@ -34,11 +34,11 @@ public class findSquareRoot {
         }
 
         if (i * i == userInteger) {
-            System.out.println(i);
+            System.out.println(i + " Brute Force Solution");
         }
 
         if (i * i > userInteger) {
-            System.out.println(--i + " We did a minus 1 on it.");
+            System.out.println(--i + " We did a minus 1 on it. Brute Force Solution");
 
         }
 
@@ -53,15 +53,19 @@ public class findSquareRoot {
         // Worst case scenario, the last possible number to search for is the square
         // root of x
         // Time complexity is O(logn)
+        // WARNING: This solution version of the binary search is probably not the best
+        // as
+        // it will do uneccessary checkings as it doesn't actually check to see if it
+        // found the square root
 
-        int r = x;
+        int r = userInteger;
         int res = 0;
         int l = 1;
 
         while (l <= r) {
             int m = l + ((r - l) / 2);
 
-            if (m <= x / m) {
+            if (m <= userInteger / m) {
                 l = m + 1;
                 res = m;
             } else {
@@ -69,5 +73,7 @@ public class findSquareRoot {
             }
 
         }
+
+        System.out.println(res + " Binary Search Solution");
     }
 }
